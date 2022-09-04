@@ -17,8 +17,9 @@ sudo apt-get install -y \
 
 
 # begin direcotrios
-mkdir -p $HOME/build
 mkdir -p $HOME/git
+mkdir -p $HOME/build
+mkdir -p $HOME/.config
 mkdir -p $HOME/projects
 
 # end direcotrios
@@ -85,8 +86,8 @@ else
 	source "$HOME/.cargo/env"
 fi
 
-rustup component add rust-src	
-rustup +nightly component add rust-analyzer-preview	
+rustup component add rust-src
+rustup +nightly component add rust-analyzer-preview
 
 # end rust
 

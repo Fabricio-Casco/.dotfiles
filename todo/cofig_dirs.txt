@@ -15,7 +15,6 @@ $XDG_CONFIG: (~/.config)
 user-dirs.dirs
 user-dirs.locale
 
-mkdir ~/.config
 
 hacer algo con notas / todo
 
