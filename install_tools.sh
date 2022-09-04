@@ -89,3 +89,16 @@ rustup component add rust-src
 rustup +nightly component add rust-analyzer-preview	
 
 # end rust
+
+
+# begin node
+if  [ -x "$(command -v node)" ]; then
+	echo "Node ya esta instalado."
+else
+	echo "Instalando Node."
+	curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+	sudo apt-get install nodejs
+fi
+# end node
+
+
