@@ -1,0 +1,14 @@
+config/dconf
+config/evolution
+config/gnome-session
+config/gnome-initial-setup-done
+config/goa-1.0
+config/gtk-3.0
+config/ibus
+config/libreoffice
+config/monitors.xml
+config/monitors.xml~
+config/nautilus
+config/pulse
+config/update-notifier
+config/wakatime
