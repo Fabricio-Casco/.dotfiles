@@ -42,6 +42,7 @@ fi
 ln -sv $HOME/git/dotfiles/home/.zshenv  $HOME/.zshenv
 
 mkdir -p $HOME/.config/wakatime
+#mkdir -p $HOME/.config/wgetrc
 mkdir -p $HOME/.cache/zsh
 
 #rm -rf ${CONFIG_BACKUP}

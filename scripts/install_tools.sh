@@ -11,7 +11,7 @@ sudo apt-get install -y \
 	build-essential procps curl wget \
 	file git ninja-build gettext libtool \
 	libtool-bin autoconf automake \
-	g++ pkg-config unzip doxygen
+	g++ pkg-config unzip doxygen cmake
 
 #end apt packages
 
@@ -22,23 +22,6 @@ mkdir -p $HOME/build
 mkdir -p $HOME/projects
 
 # end direcotrios
-
-
-# begin zsh
-if  [ -x "$(command -v zsh)" ]; then
-	echo "ZSH ya esta instalado."
-else
-	echo "Instalando ZSH."
-	sudo apt install zsh -y
-fi
-
-if ! [ -d $HOME/.oh-my-zsh/ ]; then
-	echo "Instalando OH MY ZSH."
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-# end zsh
-
 
 # begin tmux
 if  [ -x "$(command -v tmux)" ]; then
@@ -102,3 +85,17 @@ fi
 # end node
 
 
+# begin zsh
+if  [ -x "$(command -v zsh)" ]; then
+	echo "ZSH ya esta instalado."
+else
+	echo "Instalando ZSH."
+	sudo apt install zsh -y
+fi
+
+if ! [ -d $HOME/.oh-my-zsh/ ]; then
+	echo "Instalando OH MY ZSH."
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# end zsh

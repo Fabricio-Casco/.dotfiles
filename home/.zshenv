@@ -8,6 +8,7 @@ export ZDOTDIR=$HOME/.config/zsh
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+#export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 export LESSHISTFILE=-
 

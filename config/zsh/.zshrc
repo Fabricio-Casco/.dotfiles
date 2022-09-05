@@ -103,3 +103,5 @@ source $ZSH/oh-my-zsh.sh
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 export PATH=~/bin/.local/scripts:$PATH
+
+#alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
