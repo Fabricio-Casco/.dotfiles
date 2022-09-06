@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -93,11 +88,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-tabnine"] = {
-    loaded = true,
-    path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
-    url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["friendly-snippets"] = {
     loaded = true,
