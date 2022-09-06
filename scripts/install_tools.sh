@@ -11,7 +11,8 @@ sudo apt-get install -y \
 	build-essential procps curl wget \
 	file git ninja-build gettext libtool \
 	libtool-bin autoconf automake \
-	g++ pkg-config unzip doxygen cmake
+	g++ pkg-config unzip doxygen \
+        cmake ripgrep \
 
 #end apt packages
 
@@ -81,6 +82,16 @@ else
 	echo "Instalando Node."
 	curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 	sudo apt-get install nodejs
+fi
+# end node
+
+
+# begin lang servers
+if  [ -x "$(command -v npm)" ]; then
+  sudo npm install -g diagnostic-languageserver
+  sudo npm install -g dockerfile-language-server-nodejs
+  sudo npm install -g vscode-langservers-extracted
+  sudo npm install -g typescript-language-server typescript
 fi
 # end node
 

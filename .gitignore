@@ -12,6 +12,7 @@ config/nautilus
 config/pulse
 config/update-notifier
 config/wakatime
+config/wslu
 
 config/zsh/.zcompdump
 config/zsh/history

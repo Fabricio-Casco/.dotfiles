@@ -1,3 +1,7 @@
 require("ncasco.set")
+
 require("ncasco.packer")
-require("ncasco.remap")
+
+require("ncasco.statusline")
+require("ncasco.nvim-tree")
+require("ncasco.harpoon")
