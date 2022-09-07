@@ -103,5 +103,8 @@ source $ZSH/oh-my-zsh.sh
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 export PATH=~/bin/.local/scripts:$PATH
+export PATH=~/build/lua-language-server/bin/:$PATH
 
 #alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+
+alias luamake=/home/fcasco/build/lua-language-server/3rd/luamake/luamake
