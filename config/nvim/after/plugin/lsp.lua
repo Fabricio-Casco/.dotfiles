@@ -1,5 +1,6 @@
 local Remap = require("ncasco.keymap")
 local nnoremap = Remap.nnoremap
+local inoremap = Remap.inoremap
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -55,7 +56,7 @@ local function config(_config)
         nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
         nnoremap("<leader>vii", function() vim.lsp.buf.implementation() end)
         nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
-        --inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
+        inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
       end,
     }, _config or {})
 end
