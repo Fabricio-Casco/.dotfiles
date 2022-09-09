@@ -128,24 +128,6 @@ fi
 # end Sumneko lua
 
 
-# begin Sumneko lua
-  mkdir -p $HOME/build/ && cd $HOME/build
-  git clone --depth=1 https://hub.fastgit.xyz/sumneko/lua-language-server
-
-  cd lua-language-server
-  # if the cloning speed is too slow, edit .gitmodules and replace github.com
-  # with hub.fastgit.org, which should be faster than github.
-  git submodule update --init --recursive
-
-  # build on Linux
-  cd 3rd/luamake
-  compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  cd ~
-# end Sumneko lua
-
-
 # begin zsh
 if  [ -x "$(command -v zsh)" ]; then
   echo "ZSH ya esta instalado."
