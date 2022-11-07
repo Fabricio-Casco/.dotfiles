@@ -13,11 +13,21 @@ cmp.setup({
         end,
     },
     mapping = {
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        --['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        --['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        --['<CR>'] = cmp.mapping.confirm({ select = true }),
+        --[[["<CR>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+          elseif require("luasnip").expand_or_jumpable() then
+            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+          else
+            fallback()
+          end
+          end, { "i", "s", }
+        ),]]
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
     },
 
@@ -39,8 +49,8 @@ local function config(_config)
         nnoremap("K", function() vim.lsp.buf.hover() end)
         nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
         nnoremap("<leader>vd", function() vim.diagnostic.open_float() end)
-        nnoremap("[d", function() vim.diagnostic.goto_next() end)
-        nnoremap("]d", function() vim.diagnostic.goto_prev() end)
+        nnoremap("[d", function() vim.diagnostic.goto_prev() end)
+        nnoremap("]d", function() vim.diagnostic.goto_next() end)
         nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
         nnoremap("<leader>vco", function() vim.lsp.buf.code_action({
           filter = function(code_action)
@@ -56,7 +66,6 @@ local function config(_config)
         nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
         nnoremap("<leader>vii", function() vim.lsp.buf.implementation() end)
         nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
-        inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
       end,
     }, _config or {})
 end
@@ -83,9 +92,9 @@ require'lspconfig'.jsonls.setup(config())
 require'lspconfig'.tsserver.setup(config())
 
 --Rust
-require("lspconfig").rust_analyzer.setup(config({
-	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
-}))
+--require("lspconfig").rust_analyzer.setup(config({
+	--cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+--}))
 
 --Lua
 require("lspconfig").sumneko_lua.setup(config({
