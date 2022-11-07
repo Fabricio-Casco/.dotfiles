@@ -12,7 +12,7 @@ sudo apt-get install -y \
   file git ninja-build gettext libtool \
   libtool-bin autoconf automake \
   g++ pkg-config unzip doxygen \
-  cmake ripgrep \
+  cmake ripgrep jq \
 
 #end apt packages
 
@@ -67,10 +67,10 @@ else
   echo "Instalando Rust."
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   source "$HOME/.cargo/env"
-fi
 
-rustup component add rust-src
-rustup +nightly component add rust-analyzer-preview
+  rustup component add rust-src
+  rustup +nightly component add rust-analyzer-preview
+fi
 
 # end rust
 
@@ -110,6 +110,8 @@ fi
 
 
 # begin Sumneko lua
+if ! [ -d $HOME/build/lua-language-server/3rd/luamake/ ]; then
+  echo "Instalando Sumneko Lua."
   dir=$(pwd)
   mkdir -p $HOME/build/ && cd $HOME/build
   git clone --depth=1 https://hub.fastgit.xyz/sumneko/lua-language-server
@@ -125,26 +127,10 @@ fi
   cd ../..
   ./3rd/luamake/luamake rebuild
   cd $dir
+else
+  echo "Sumneko Lua ya esta instalado"
+fi
 # end Sumneko lua
-
-
-# begin Sumneko lua
-  mkdir -p $HOME/build/ && cd $HOME/build
-  git clone --depth=1 https://hub.fastgit.xyz/sumneko/lua-language-server
-
-  cd lua-language-server
-  # if the cloning speed is too slow, edit .gitmodules and replace github.com
-  # with hub.fastgit.org, which should be faster than github.
-  git submodule update --init --recursive
-
-  # build on Linux
-  cd 3rd/luamake
-  compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  cd ~
-# end Sumneko lua
-
 
 # begin zsh
 if  [ -x "$(command -v zsh)" ]; then
