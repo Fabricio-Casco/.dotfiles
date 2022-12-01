@@ -1,5 +1,7 @@
 require("ncasco.set")
 
+require('impatient').enable_profile()
+
 require("ncasco.packer")
 
 require("ncasco.statusline")

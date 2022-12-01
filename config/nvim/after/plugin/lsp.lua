@@ -13,8 +13,8 @@ cmp.setup({
         end,
     },
     mapping = {
-        --['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        --['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         --['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -71,16 +71,16 @@ local function config(_config)
 end
 
 --yarn global add diagnostic-languageserver
-require'lspconfig'.diagnosticls.setup(config())
+--require'lspconfig'.diagnosticls.setup(config())
 
 --npm install -g dockerfile-language-server-nodejs
-require'lspconfig'.dockerls.setup(config())
+--require'lspconfig'.dockerls.setup(config())
 
 --:OmnisharpInstall
-local pid = vim.fn.getpid()
-require'lspconfig'.omnisharp.setup(config({
-    cmd = { "/home/fcasco/.cache/omnisharp-vim/omnisharp-roslyn/run", "--languageserver" , "--hostPID", tostring(pid) };
-}))
+--local pid = vim.fn.getpid()
+--require'lspconfig'.omnisharp.setup(config({
+    --cmd = { "/home/fcasco/.cache/omnisharp-vim/omnisharp-roslyn/run", "--languageserver" , "--hostPID", tostring(pid) };
+--}))
 
 --npm i -g vscode-langservers-extracted
 require'lspconfig'.html.setup(config())
@@ -92,9 +92,9 @@ require'lspconfig'.jsonls.setup(config())
 require'lspconfig'.tsserver.setup(config())
 
 --Rust
---require("lspconfig").rust_analyzer.setup(config({
-	--cmd = { "rustup", "run", "nightly", "rust-analyzer" },
---}))
+require("lspconfig").rust_analyzer.setup(config({
+  cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+}))
 
 --Lua
 require("lspconfig").sumneko_lua.setup(config({

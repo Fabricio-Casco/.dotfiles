@@ -12,6 +12,10 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  -- NVIM Optimization
+  -- alternative https://github.com/tami5/impatient.nvim
+  use 'lewis6991/impatient.nvim'
+
   -- Packer
   use 'wbthomason/packer.nvim'
 
