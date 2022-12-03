@@ -88,8 +88,14 @@ require'lspconfig'.cssls.setup(config())
 require'lspconfig'.jsonls.setup(config())
 --require'lspconfig'.eslint.setup(config())
 
+require'lspconfig'.denols.setup {
+  root_dir = require'lspconfig'.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
 --npm install -g typescript typescript-language-server
-require'lspconfig'.tsserver.setup(config())
+require'lspconfig'.tsserver.setup(config({
+  root_dir = require'lspconfig'.util.root_pattern("package.json")
+}))
 
 --Rust
 require("lspconfig").rust_analyzer.setup(config({

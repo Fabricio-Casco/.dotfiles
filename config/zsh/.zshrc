@@ -99,11 +99,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cls="clear"
 
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 export PATH=~/bin/.local/scripts:$PATH
 export PATH=~/build/lua-language-server/bin/:$PATH
+export PATH=$HOME/.deno/bin/:$PATH
+
 
 #alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 

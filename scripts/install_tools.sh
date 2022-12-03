@@ -85,6 +85,15 @@ else
 fi
 # end node
 
+# begin deno
+if  [ -x "$(command --version deno)" ]; then
+  echo "Deno ya esta instalado."
+else
+  echo "Instalando Deno."
+  curl -fsSL https://deno.land/x/install/install.sh | sh
+fi
+# end deno
+
 
 # begin lang servers
 if  [ -x "$(command -v npm)" ]; then
