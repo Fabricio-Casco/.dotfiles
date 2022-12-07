@@ -1,11 +1,16 @@
-require'nvim-tree'.setup {
+local ok, explorer = pcall(require, 'nvim-tree')
+
+if not ok then
+  return
+end
+
+explorer.setup {
   disable_netrw        = false,
   hijack_netrw         = false,
   open_on_setup        = false,
   hijack_cursor        = true,
   view = {
-    width = 30,
-    height = 30,
+    width = 45,
     hide_root_folder = true,
     side = 'left',
     preserve_window_proportions = false,

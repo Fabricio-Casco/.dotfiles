@@ -11,6 +11,8 @@ nnoremap("<leader>pv", "<cmd>Ex<CR>")
 -- Scroll
 nnoremap("<UP>", "<C-y>")
 nnoremap("<Down>", "<C-e>")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
 
 -- Moove between split windows
 nnoremap("<leader>h", "<C-W><C-H>")
@@ -48,27 +50,22 @@ inoremap(".", ".<C-g>u")
 inoremap("!", "!<C-g>u")
 inoremap("?", "?<C-g>u")
 
--- TODO arreglar esto
+--Run the last command
+nnoremap("!!", ":<up>")
+
 -- Special characters
-function hello()
-  print ("hello")
-  local pos = vim.api.nvim_win_get_cursor(0)[2]
-  local line = vim.api.nvim_get_current_line()
-  local nline = line:sub(0, pos) .. 'hello' .. line:sub(pos + 1)
-  vim.api.nvim_set_current_line(nline)
-end
-inoremap("<M-n>", hello)
-inoremap("<M-N>", "Ñ")
 inoremap("<M-a>", "á")
 inoremap("<M-e>", "é")
 inoremap("<M-i>", "í")
 inoremap("<M-o>", "ó")
 inoremap("<M-u>", "ú")
+inoremap("<M-n>", "ñ")
 inoremap("<M-A>", "Á")
 inoremap("<M-E>", "É")
 inoremap("<M-I>", "Í")
 inoremap("<M-O>", "Ó")
 inoremap("<M-U>", "Ú")
+inoremap("<M-N>", "Ñ")
 
 -- Jumplist mutations
 --nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'

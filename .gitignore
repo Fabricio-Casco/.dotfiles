@@ -18,3 +18,5 @@ config/configstore
 config/zsh/.zcompdump
 config/zsh/history
 *zcompdump*
+
+nodemon.json

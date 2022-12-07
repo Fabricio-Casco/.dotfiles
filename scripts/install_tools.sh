@@ -12,10 +12,10 @@ sudo apt-get install -y \
   file git ninja-build gettext libtool \
   libtool-bin autoconf automake \
   g++ pkg-config unzip doxygen \
-  cmake ripgrep jq \
+  cmake ripgrep jq python3\
 
+  curl -sSL https://bit.ly/install-xq | sudo bash
 #end apt packages
-
 
 # begin direcotrios
 mkdir -p $HOME/git
@@ -45,7 +45,7 @@ else
   fi
   cd $HOME/build/neovim
   echo "Instalando Neovim from source"
-  make
+  make CMAKE_BUILD_TYPE=RelWithDebInfo
   sudo make install
 fi
 
@@ -93,6 +93,31 @@ else
   curl -fsSL https://deno.land/x/install/install.sh | sh
 fi
 # end deno
+
+# begin Neovim Python3 Provider
+sudo apt update
+sudo apt install python3-pip -y
+pip3 install --upgrade pynvim
+# end Neovim Python3 Provider
+
+# begin Neovim Ruby Provider
+sudo apt update
+sudo apt install ruby ruby-dev -y
+sudo gem install neovim
+# end pip3
+
+# begin Neovim Node.js Provider
+sudo npm install -g neovim
+# end Neovim Node.js Provider
+
+# begin Neovim Pearl Provider
+curl -L https://cpanmin.us/ -o cpanm
+chmod +x cpanm
+sudo mv cpanm /usr/local/bin/cpanm
+sudo cpanm -n App::cpanminus
+sudo cpanm -n Neovim::Ext
+sudo cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+# end Neovim Node.js Provider
 
 
 # begin lang servers
@@ -153,5 +178,11 @@ if ! [ -d $HOME/.oh-my-zsh/ ]; then
   echo "Instalando OH MY ZSH."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-
 # end zsh
+
+# begin win32yank
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/
+# end win32yank

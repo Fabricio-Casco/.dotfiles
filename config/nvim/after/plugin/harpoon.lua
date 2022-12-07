@@ -1,25 +1,33 @@
 local Remap = require("ncasco.keymap")
 local nnoremap = Remap.nnoremap
 
+local ok, harpoon = pcall(require, "harpoon")
+
+if not ok then
+  return
+end
+
+local ui = require("harpoon.ui")
+local mark = require("harpoon.mark")
+
+harpoon.setup {}
+
 nnoremap("<leader>a", function()
-  require('harpoon.mark').add_file()
+  mark.add_file()
 end)
 nnoremap("<C-e>", function()
-  require('harpoon.ui').toggle_quick_menu()
-end)
-nnoremap("<C-y>", function()
-  require('harpoon.cmd-ui').toggle_quick_menu()
+  ui.toggle_quick_menu()
 end)
 
 nnoremap("<C-h>", function()
-  require('harpoon.ui').nav_file(1)
+  ui.nav_file(1)
 end)
 nnoremap("<C-j>", function()
-  require('harpoon.ui').nav_file(2)
+  ui.nav_file(2)
 end)
 nnoremap("<C-k>", function()
-  require('harpoon.ui').nav_file(3)
+  ui.nav_file(3)
 end)
 nnoremap("<C-l>", function()
-  require('harpoon.ui').nav_file(4)
+  ui.nav_file(4)
 end)
