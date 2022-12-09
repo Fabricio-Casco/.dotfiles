@@ -23,9 +23,9 @@ fi
 rm -rf $HOME/.config
 ln -sv $HOME/git/dotfiles/config/ $HOME/.config
 
-if [ "$MOVE_CONFIG" = true ]; then
-	cp -r ${CONFIG_BACKUP}/.config/. $HOME/.config
-fi
+#if [ "$MOVE_CONFIG" = true ]; then
+	#cp -r ${CONFIG_BACKUP}/.config/. $HOME/.config
+#fi
 
 rm -rf $HOME/bin/.local/scripts
 mkdir -p $HOME/bin/.local/

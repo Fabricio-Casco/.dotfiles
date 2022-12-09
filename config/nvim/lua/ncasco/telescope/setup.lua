@@ -105,6 +105,8 @@ require("telescope").setup {
       n = {
         ["<C-e>"] = actions.results_scrolling_down,
         ["<C-y>"] = actions.results_scrolling_up,
+        ["<C-n>"] = "move_selection_next",
+        ["<C-p>"] = "move_selection_previous",
       },
     },
 

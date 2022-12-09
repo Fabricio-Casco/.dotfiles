@@ -17,11 +17,11 @@ end
 
 require "ncasco.disable_builtin"
 
-
 vim.g.mapleader = " "
 require "ncasco.options"
 require "ncasco.remaps"
 
+require'impatient'.enable_profile()
 
 require "ncasco.plugins"
 

@@ -188,8 +188,13 @@ end
 -- Configurar actions :h telescope-file-browser.actions
 function M.file_browser()
   local opts
+  local path = vim.fn.expand "%:h"
+  if path == "" then
+    path = nil
+  end
 
   opts = {
+    cwd = path,
     sorting_strategy = "ascending",
     scroll_strategy = "cycle",
     layout_config = {
