@@ -67,7 +67,7 @@ require("telescope").setup {
       i = {
         ["<C-x>"] = false,
         ["<C-s>"] = actions.select_horizontal,
-        ["<C-n>"] = "move_selection_next",
+        -- ["<C-n>"] = "move_selection_next",
 
         ["<C-e>"] = actions.results_scrolling_down,
         ["<C-y>"] = actions.results_scrolling_up,

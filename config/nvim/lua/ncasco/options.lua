@@ -1,5 +1,4 @@
 local opt = vim.opt
-vim.g.loaded_matchparen = 1
 
 opt.relativenumber = true
 opt.nu = true

@@ -11,10 +11,6 @@
 
 require "ncasco.globals"
 
-if require "ncasco.first_load"() then
-  return
-end
-
 require "ncasco.disable_builtin"
 
 vim.g.mapleader = " "
