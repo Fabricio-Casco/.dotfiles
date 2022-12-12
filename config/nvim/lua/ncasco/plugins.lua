@@ -48,14 +48,14 @@ return require('packer').startup(function(use)
   -- use { "tami5/sqlite.lua" }
   use { "nvim-telescope/telescope-smart-history.nvim" }
   use "nvim-telescope/telescope-frecency.nvim"
-  use "nvim-telescope/telescope-cheat.nvim"
+  -- use "nvim-telescope/telescope-cheat.nvim"
   -- use { "nvim-telescope/telescope-arecibo.nvim", rocks = { "openssl", "lua-http-parser" } }
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use "nvim-telescope/telescope-hop.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
-  use "rcarriga/nvim-notify"
-  use "AckslD/nvim-neoclip.lua"
+  -- use "rcarriga/nvim-notify"
+  -- use "AckslD/nvim-neoclip.lua"
 
   -- Harpoon
   use 'ThePrimeagen/harpoon'
@@ -93,8 +93,8 @@ return require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
 
   -- Dap
-  use 'mfussenegger/nvim-dap'
-  use "nvim-telescope/telescope-dap.nvim"
+  -- use 'mfussenegger/nvim-dap'
+  -- use "nvim-telescope/telescope-dap.nvim"
 
   -- Colorscheme
   use 'mhartington/oceanic-next'

@@ -1,71 +1,67 @@
-local Remap = require("ncasco.keymap")
-local nnoremap = Remap.nnoremap
-local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
-local xnoremap = Remap.xnoremap
-
 -- Netrw
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
+NNOREMAP("<leader>pv", "<cmd>Ex<CR>")
 
 -- Scroll
-nnoremap("<UP>", "<C-y>")
-nnoremap("<Down>", "<C-e>")
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+NNOREMAP("<UP>", "<C-y>")
+NNOREMAP("<Down>", "<C-e>")
+NNOREMAP("<C-d>", "<C-d>zz")
+NNOREMAP("<C-u>", "<C-u>zz")
 
 -- Moove between split windows
-nnoremap("<leader>h", "<C-W><C-H>")
-nnoremap("<leader>j", "<C-W><C-J>")
-nnoremap("<leader>k", "<C-W><C-K>")
-nnoremap("<leader>l", "<C-W><C-L>")
+NNOREMAP("<leader>h", "<C-W><C-H>")
+NNOREMAP("<leader>j", "<C-W><C-J>")
+NNOREMAP("<leader>k", "<C-W><C-K>")
+NNOREMAP("<leader>l", "<C-W><C-L>")
 -- Make splits the same size
-nnoremap("<leader>=", "<C-w>=")
+NNOREMAP("<leader>=", "<C-w>=")
 -- Sizing windows
-nnoremap("<leader>-", "<C-W>5<")
-nnoremap("<leader>+", "<C-W>5>")
+NNOREMAP("<C-Up>", "<C-W>2+")
+NNOREMAP("<C-Down>", "<C-W>2-")
+NNOREMAP("<leader>+", "<C-W>10>")
+NNOREMAP("<leader>-", "<C-W>10<")
 
 -- Use null registers for the next delete or copy
-nnoremap("<leader>d", "\"_d")
-nnoremap("<leader>c", "\"_c")
-xnoremap("<leader>p", "\"_dP")
-vnoremap("<leader>d", "\"_d")
-vnoremap("<leader>c", "\"_c")
-vnoremap("<leader>p", "\"_dP")
+NNOREMAP("<leader>d", "\"_d")
+NNOREMAP("<leader>c", "\"_c")
+XNOREMAP("<leader>p", "\"_dP")
+VNOREMAP("<leader>d", "\"_d")
+VNOREMAP("<leader>c", "\"_c")
+VNOREMAP("<leader>p", "\"_dP")
 
 -- Moove lines
-inoremap("<M-j>", "<Esc>:m .+1<CR>==gi")
-inoremap("<M-k>", "<Esc>:m .-2<CR>==gi")
-vnoremap("<M-j>", ":m '>+1<CR>gv=gv")
-vnoremap("<M-k>", ":m '<-2<CR>gv=gv")
+INOREMAP("<M-j>", "<Esc>:m .+1<CR>==gi")
+INOREMAP("<M-k>", "<Esc>:m .-2<CR>==gi")
+VNOREMAP("<M-j>", ":m '>+1<CR>gv=gv")
+VNOREMAP("<M-k>", ":m '<-2<CR>gv=gv")
 
 -- Keep cursor centered when jumping
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
-nnoremap("J", "mzJ`z")
+NNOREMAP("n", "nzzzv")
+NNOREMAP("N", "Nzzzv")
+NNOREMAP("J", "mzJ`z")
 
 -- Undo break points
-inoremap(",", ",<C-g>u")
-inoremap(".", ".<C-g>u")
-inoremap("!", "!<C-g>u")
-inoremap("?", "?<C-g>u")
+INOREMAP(",", ",<C-g>u")
+INOREMAP(".", ".<C-g>u")
+INOREMAP("!", "!<C-g>u")
+INOREMAP("?", "?<C-g>u")
 
 --Run the last command
-nnoremap("!!", ":<up>")
+NNOREMAP("!!", ":<up>")
 
 -- Special characters
-inoremap("<M-a>", "á")
-inoremap("<M-e>", "é")
-inoremap("<M-i>", "í")
-inoremap("<M-o>", "ó")
-inoremap("<M-u>", "ú")
-inoremap("<M-n>", "ñ")
-inoremap("<M-A>", "Á")
-inoremap("<M-E>", "É")
-inoremap("<M-I>", "Í")
-inoremap("<M-O>", "Ó")
-inoremap("<M-U>", "Ú")
-inoremap("<M-N>", "Ñ")
+INOREMAP("<M-a>", "á")
+INOREMAP("<M-e>", "é")
+INOREMAP("<M-i>", "í")
+INOREMAP("<M-o>", "ó")
+INOREMAP("<M-u>", "ú")
+INOREMAP("<M-n>", "ñ")
+INOREMAP("<M-A>", "Á")
+INOREMAP("<M-E>", "É")
+INOREMAP("<M-I>", "Í")
+INOREMAP("<M-O>", "Ó")
+INOREMAP("<M-U>", "Ú")
+INOREMAP("<M-N>", "Ñ")
 
 -- Jumplist mutations
---nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
---nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+--NNOREMAP <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+--NNOREMAP <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'

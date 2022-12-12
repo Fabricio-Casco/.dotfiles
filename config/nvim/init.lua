@@ -25,8 +25,10 @@ require "ncasco.plugins"
 require "ncasco.lsp"
 require "ncasco/telescope.setup"
 require "ncasco/telescope.mappings"
+
 require "ncasco.file-explorer"
 
+require "ncasco.event_listners"
 
 local augroup = vim.api.nvim_create_augroup
 local ncascoGroup = augroup('ncasco', {})
