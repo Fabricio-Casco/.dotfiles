@@ -71,7 +71,7 @@ nnoremap(
 )
 
 nnoremap(
-  "d]",
+  "]d",
   function()
     vim.diagnostic.goto_next {
       severity = get_highest_error_severity(),

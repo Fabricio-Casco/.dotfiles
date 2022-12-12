@@ -3,8 +3,21 @@ vim.g.loaded_matchparen = 1
 
 opt.relativenumber = true
 opt.nu = true
-opt.scrolloff = 8
+local group = vim.api.nvim_create_augroup("LineNumberControl", { clear = true })
+local set_line_number = function(event, value, pattern)
+  vim.api.nvim_create_autocmd(event, {
+    group = group,
+    pattern = pattern,
+    callback = function()
+      vim.opt_local.relativenumber = value
+    end,
+  })
+end
+set_line_number("WinLeave", false)
+set_line_number("WinEnter", true)
 
+
+opt.scrolloff = 8
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 2
@@ -39,7 +52,7 @@ opt.termguicolors = true
 opt.showmode = false
 opt.equalalways = false
 opt.splitright = true
-opt.splitbelow = true
+opt.splitbelow = false
 
 opt.completeopt = {"menu","menuone","noinsert","noselect"}
 opt.shortmess:append("c")
@@ -91,8 +104,5 @@ opt.formatoptions = opt.formatoptions
 
 -- set joinspaces
 opt.joinspaces = false
-
--- set fillchars=eob:~
-opt.fillchars = { eob = "~" }
 
 vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }

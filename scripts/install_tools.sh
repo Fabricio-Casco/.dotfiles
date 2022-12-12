@@ -110,7 +110,7 @@ sudo gem install neovim
 sudo npm install -g neovim
 # end Neovim Node.js Provider
 
-# begin Neovim Pearl Provider
+# begin Neovim Perl Provider
 curl -L https://cpanmin.us/ -o cpanm
 chmod +x cpanm
 sudo mv cpanm /usr/local/bin/cpanm
