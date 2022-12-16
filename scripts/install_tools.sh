@@ -12,7 +12,8 @@ sudo apt-get install -y \
   file git ninja-build gettext libtool \
   libtool-bin autoconf automake \
   g++ pkg-config unzip doxygen \
-  cmake ripgrep jq python3\
+  cmake ripgrep jq python3 \
+  libevent-dev libncurses5-dev bison flex \
 
   curl -sSL https://bit.ly/install-xq | sudo bash
 #end apt packages
@@ -29,7 +30,16 @@ if  [ -x "$(command -v tmux)" ]; then
   echo "Tmux ya esta instalado."
 else
   echo "Instalando tmux."
-  sudo apt install tmux -y
+  # sudo apt install tmux -y
+  rm -rf /tmp/tmux
+  git clone https://github.com/tmux/tmux.git /tmp/tmux
+  cd /tmp/tmux
+  sh autogen.sh
+  ./configure && make
+  sudo make install
+  cd -
+  rm -rf /tmp/tmux
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugin
 fi
 
 # end tmux
@@ -177,6 +187,13 @@ fi
 if ! [ -d $HOME/.oh-my-zsh/ ]; then
   echo "Instalando OH MY ZSH."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  # Powerlevel10k
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+  # Plugins
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 # end zsh
 

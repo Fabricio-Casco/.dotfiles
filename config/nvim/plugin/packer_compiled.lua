@@ -264,6 +264,16 @@ _G.packer_plugins = {
     path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  vim = {
+    loaded = true,
+    path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/fcasco/.local/share/nvim/site/pack/packer/start/vim-vsnip",

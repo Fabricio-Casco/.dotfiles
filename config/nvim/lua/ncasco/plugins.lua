@@ -60,6 +60,9 @@ return require('packer').startup(function(use)
   -- Harpoon
   use 'ThePrimeagen/harpoon'
 
+  -- Vim Tmux Navigator
+  use "christoomey/vim-tmux-navigator"
+
   -- fugitive
   --use 'tpope/vim-fugitive'
 
@@ -101,6 +104,7 @@ return require('packer').startup(function(use)
   use 'gruvbox-community/gruvbox'
   use 'folke/tokyonight.nvim'
   use "EdenEast/nightfox.nvim"
+  use "dracula/vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

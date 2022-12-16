@@ -87,6 +87,20 @@ function M.edit_zsh()
   }
 end
 
+function M.edit_tmux()
+  require("telescope.builtin").find_files {
+    shorten_path = false,
+    cwd = "~/.config/tmux/",
+    prompt = "~ dotfiles ~",
+    hidden = true,
+
+    layout_strategy = "horizontal",
+    layout_config = {
+      preview_width = 0.55,
+    },
+  }
+end
+
 -- Search
 function M.grep_prompt()
   require("telescope.builtin").grep_string {

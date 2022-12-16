@@ -8,10 +8,12 @@ NNOREMAP("<C-d>", "<C-d>zz")
 NNOREMAP("<C-u>", "<C-u>zz")
 
 -- Moove between split windows
-NNOREMAP("<leader>h", "<C-W><C-H>")
-NNOREMAP("<leader>j", "<C-W><C-J>")
-NNOREMAP("<leader>k", "<C-W><C-K>")
-NNOREMAP("<leader>l", "<C-W><C-L>")
+NNOREMAP("<leader>|", ":vsplit<CR>")
+NNOREMAP("<leader>-", ":hsplit<CR>")
+-- NNOREMAP("<leader>h", "<C-W><C-H>")
+-- NNOREMAP("<leader>j", "<C-W><C-J>")
+-- NNOREMAP("<leader>k", "<C-W><C-K>")
+-- NNOREMAP("<leader>l", "<C-W><C-L>")
 -- Make splits the same size
 NNOREMAP("<leader>=", "<C-w>=")
 -- Sizing windows
@@ -23,10 +25,12 @@ NNOREMAP("<leader>-", "<C-W>10<")
 -- Use null registers for the next delete or copy
 NNOREMAP("<leader>d", "\"_d")
 NNOREMAP("<leader>c", "\"_c")
+NNOREMAP("<leader>x", "\"_x")
 XNOREMAP("<leader>p", "\"_dP")
 VNOREMAP("<leader>d", "\"_d")
 VNOREMAP("<leader>c", "\"_c")
 VNOREMAP("<leader>p", "\"_dP")
+VNOREMAP("<leader>x", "\"_x")
 
 -- Moove lines
 INOREMAP("<M-j>", "<Esc>:m .+1<CR>==gi")

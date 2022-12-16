@@ -35,6 +35,7 @@ vim.api.nvim_set_keymap("c", "<c-h>", "<Plug>(TelescopeFuzzyCommandSearch)", { n
 -- Dotfiles
 map_tele("<leader>en", "edit_neovim")
 map_tele("<leader>ez", "edit_zsh")
+map_tele("<leader>et", "edit_tmux")
 
 -- Search
 map_tele("<leader>ps", "grep_prompt")
