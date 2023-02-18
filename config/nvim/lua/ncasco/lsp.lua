@@ -63,6 +63,11 @@ require'lspconfig'.denols.setup(config({
   root_dir = require'lspconfig'.util.root_pattern("deno.json", "deno.jsonc"),
 }))
 
+--Go
+require("lspconfig").gopls.setup(config({
+  cmd = { "gopls", "serve"},
+}))
+
 --yarn global add diagnostic-languageserver
 --require'lspconfig'.diagnosticls.setup(config())
 

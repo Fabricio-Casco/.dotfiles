@@ -13,8 +13,17 @@ VERSION="1.alpha"
 #   validadar si la herramienta ya esta instalada
 
 main() {
-  echo "Fabricio Nicolás Casco - Tools Installer v$VERSION"
-  tool_install_prompt "Packages" "ORANGE"
+  # echo "Fabricio Nicolás Casco - Tools Installer v$VERSION"
+  # tool_install_prompt "Packages" "ORANGE"
+  Help
+}
+
+Help() {
+  echo "Tools Installer $VERSION"
+  echo "Fabricio Nicolás Casco <fabricionicolascasco@gmail.com>"
+  echo
+  echo "tools_installer ..."
+  echo
 }
 
 tool_install_prompt() {

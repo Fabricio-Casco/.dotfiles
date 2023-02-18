@@ -116,6 +116,9 @@ export PATH=~/build/lua-language-server/bin/:$PATH
 export PATH=$HOME/.deno/bin/:$PATH
 export PATH=$HOME/usr/local/bin/:$PATH
 export PATH=/usr/local/bin/:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
 #alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"

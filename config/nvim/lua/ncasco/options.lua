@@ -55,7 +55,7 @@ opt.wildignore:append "__pycache__"
 opt.wildignore:append { "*.o", "*~", "*.pyc", "*pycache*" }
 opt.wildignore:append "Cargo.lock"
 
-opt.foldmethod = "marker"
+-- opt.foldmethod = "marker"
 opt.foldlevel = 0
 opt.modelines = 1
 
